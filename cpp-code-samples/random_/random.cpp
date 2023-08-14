@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
 
-void Jogar();
+void PlayGame();
 
 int StopContinue() {
     std::string res;
     std::cout << "Voce deseja continuar jogando (Y/n)?";
     std::cin >> res;
     if (res == "Y" || res == "y") {
-        Jogar();
+        PlayGame();
         return StopContinue();
     } else if(res == "N" || res == "n") {
         return 0;
@@ -18,7 +18,7 @@ int StopContinue() {
     }
 }
 
-void Jogar() {
+void PlayGame() {
     srand(time(NULL));
     int num_rand = rand() % 5 + 1;
     int num_input;
@@ -36,6 +36,6 @@ void Jogar() {
 
 int main() {
 
-    Jogar();
+    PlayGame();
     return StopContinue();
 }
